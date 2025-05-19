@@ -46,6 +46,10 @@ enums:
     - 4
     - 5
 
+requiredAnnotation:
+  field: doc.value
+  formatHint: "Required: field1, field2"
+
 validationRules:
   - allIdsMustBeUnique: true
   - allHrefMustResolve: true

@@ -60,20 +60,24 @@ Enumerate all operations the API must support. For each action, specify:
 
 - Action name
 - Inputs (fields required)
+- Required fields (subset of inputs)
 - Return value (target state)
 - Type (`Safe`, `Idempotent`, `Unsafe`, or `Delete`)
 
 ```markdown
 ## Actions
-- **GetTaskList**:
-  - Inputs: None
-  - Returns: TaskCollection
-  - Type: Safe
 
 - **CreateNewTask**:
-  - Inputs: id, title, status
+  - Inputs: id, title, description, dueDate, status, priority, assignedUser
+  - Required: id, title, status
   - Returns: TaskCollection
   - Type: Unsafe
+
+- **UpdateStatusOfTask**:
+  - Inputs: id, status
+  - Required: id, status
+  - Returns: TaskItem
+  - Type: Idempotent
 ```
 
 ---
@@ -94,10 +98,9 @@ Capture important constraints or business logic.
 ## ✅ Best Practices
 
 - Use consistent naming for resources and fields
+- Always include `Required:` lines for each action
 - Keep descriptions short but clear
-- Make sure all actions return a valid resource
-- Include at least one action for each resource
-- Confirm that every state is reachable and has useful transitions
+- Confirm that every state is reachable and has outbound transitions
 
 ---
 
@@ -109,4 +112,3 @@ A well-written API Story enables automatic generation of:
 - OpenAPI specifications (for RESTful interface design)
 - HTML documentation
 - Tests, mocks, and more
-

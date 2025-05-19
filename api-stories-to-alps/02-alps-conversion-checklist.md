@@ -36,6 +36,7 @@ Use this checklist to ensure accuracy and completeness when converting an API St
 - [ ] Set `rt` to the return state’s ID
 - [ ] Include `href` to input field descriptors
 - [ ] Tag actions consistently by domain or function
+- [ ] **Annotate required inputs in `doc.value` using format: "Required: field1, field2"**
 
 ---
 
@@ -57,6 +58,7 @@ Use this checklist to ensure accuracy and completeness when converting an API St
   - [ ] Isolated states
   - [ ] Unlinked transitions
   - [ ] Broken references
+  - [ ] Required fields are annotated in action `doc.value` fields
 
 ---
 
@@ -65,4 +67,3 @@ Use this checklist to ensure accuracy and completeness when converting an API St
 - [ ] Confirm format (JSON or XML)
 - [ ] Confirm title and version info
 - [ ] Ready to generate OpenAPI, JSON Schema, or agent-facing docs
-

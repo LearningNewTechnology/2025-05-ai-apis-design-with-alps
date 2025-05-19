@@ -18,7 +18,8 @@ Please create an ALPS profile based on the following API Story. This profile sho
   - Resource states must use `UpperCamelCase` IDs and `type: semantic`
   - Operations (choreography) must use `type: safe`, `unsafe`, or `idempotent`
   - Actions should use `go` or `do` prefixes based on type
-  - Each operation must specify `rt` (return state) and include field inputs via `href`
+  - Each operation must specify `rt` (return state) and include input fields via `href`
+  - **Required inputs must be annotated in the `doc.value` of the operation descriptor**
   - Tags must be applied consistently for grouping
   - The document must include all necessary fields, states, and transitions
   - The final ALPS must pass a structural verification
@@ -34,7 +35,7 @@ Attach the API Story as a file and instruct the LLM to read from the file conten
 ## 🔹 Example Invocation
 
 ```text
-Please create an ALPS profile from the attached file describing a Task Management system. The story includes fields like `title`, `status`, and actions such as `CreateNewTask`, `UpdateStatus`, and `GetFilteredTaskList`. Follow naming conventions and ALPS specification for types, transitions, and field references.
+Please create an ALPS profile from the attached file describing a Task Management system. Be sure to include all fields and actions, and annotate required fields for each operation in the ALPS `doc.value` block.
 ```
 
 ---
@@ -44,4 +45,5 @@ Please create an ALPS profile from the attached file describing a Task Managemen
 - JSON ALPS document
 - Includes `$schema` and `alps.version`
 - Fully structured: ontology, taxonomy, choreography
+- Required fields listed in transition `doc.value` (e.g., "Required: id, status")
 - No comments in JSON

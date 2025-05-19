@@ -57,6 +57,12 @@ The goal is to translate business-level narratives and API behaviors into a cons
 - Set `rt` to the ID of the target state (`#TaskItem`)
 - Use `href` to include field references from ontology
 
+### 📌 Required Inputs
+- If an action has explicitly marked required fields (from API Story), list them in `doc.value`:
+  ```json
+  "doc": { "value": "Required: id, title, status" }
+  ```
+
 ---
 
 ## 🔶 Step 4: Link Everything Together
@@ -83,6 +89,7 @@ The goal is to translate business-level narratives and API behaviors into a cons
 Run a validation report to confirm:
 - No duplicate or missing IDs
 - All `rt` and `href` references resolve
+- Required fields are documented in transitions
 - No isolated states or unlinked transitions
 - All elements are connected and usable
 
@@ -91,4 +98,3 @@ Run a validation report to confirm:
 ## ✅ Result
 
 You now have a protocol-independent semantic model that accurately represents the API Story in an interoperable and inspectable format, ready for conversion to OpenAPI, JSON Schema, or agent-based protocols.
-
