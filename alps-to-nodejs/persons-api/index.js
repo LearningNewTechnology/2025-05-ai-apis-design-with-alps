@@ -114,7 +114,17 @@ app.delete('/persons/:id', (req, res) => {
   res.status(204).end();
 });
 
+if (require.main === module) {
+  app.listen(port, () => {
+    console.log(`Person Service API running at http://localhost:${port}`);
+  });
+} else {
+  app.__setPersons__ = (data) => { persons = data; };
+  module.exports = app;
+}
+
+/*
 app.listen(port, () => {
   console.log(`Person Service API running at http://localhost:${port}`);
 });
-
+*/
