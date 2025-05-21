@@ -21,11 +21,11 @@ In this first pass at the application, we need to keep track of the following da
 The following are resources, or states, of the API. Each state has one or more possible Actions.
 
  * **Home** : The home or landing page of the API. Users typically start here.
-   * Actions: **GetTaskList**
+   * Actions: **GetTaskList**, **GetFilteredTaskList**, **ShowHomePage**
  * **TaskCollection** : The list of tasks in the system are displayed here.
-   * Actions: **Home**, **GetFilteredTaskList**, **CreateNewTask**,**GetTaskItem**
+   * Actions: **ShowHomePage**, **GetTaskList**, **GetFilteredTaskList**, **CreateNewTask**,**GetTaskItem**
  * **TaskItem** : This resource shows a single task (selected from the TaskCollection)
-   * Actions: **EditExistingTask**, **UpdateStatusOfTask**, **SetDueDateOfTask**, **AssignUserToTask**, **GetTaskList**, **GetFilteredTaskList**, **Home**
+   * Actions: **EditExistingTask**, **UpdateStatusOfTask**, **SetDueDateOfTask**, **AssignUserToTask**, **GetTaskList**, **GetFilteredTaskList**, **ShowHomePage**
  
 ## Actions
 This edition of the application needs to support the following operations. Each action has zero or more input properties and always has one return value (to another state). Each action is also marked as either Safe (GET), Unsafe (POST), Idempotent (PUT/PATCH), or Delete (DELETE)
