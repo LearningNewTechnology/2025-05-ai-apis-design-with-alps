@@ -159,7 +159,7 @@ For each transition (`type`: `safe`, `unsafe`, `idempotent`):
 
 ---
 
-## ✅ STEP 9: Add a Mermaid Diagram (Optional but Recommended)
+## ✅ STEP 9: Add a Mermaid Diagram
 
 20. Generate a **Mermaid diagram** to visually represent application states and transitions:
 
