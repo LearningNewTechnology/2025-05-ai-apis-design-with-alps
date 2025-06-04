@@ -40,7 +40,7 @@
       
       {"id": "person", "type": "semantic",
         "title":"The properties of a person record",
-        "tag":"ontology taxonomy", 
+        "tag":"ontology", 
         "descriptor": [
           {"href": "#id"},
           {"href": "#givenName"},
