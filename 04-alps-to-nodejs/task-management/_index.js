@@ -27,12 +27,6 @@ let tasks = [
     assignedUser: "Bob"
   }
 ];
-if (process.env.NODE_ENV === "test") {
-  app.__setPersons__ = (fn) => {
-    tasks = fn();
-  };
-}
-
 
 // Helper: generate _links
 function generateLinks(task) {
@@ -127,25 +121,8 @@ app.put('/tasks/:id/assign', (req, res) => {
   res.json({ ...task, _links: generateLinks(task) });
 });
 
-if (process.env.NODE_ENV !== "test") {
-  const PORT = process.env.PORT || 3000;
-  app.listen(PORT, () => {
-    console.log(`Task API running on port ${PORT}`);
-  });
-}
-
-if (require.main === module) {
-  app.listen(port, () => {
-    console.log(`Task API running on port ${PORT}`);
-  });
-} else {
-  app.__setPersons__ = (data) => { persons = data; };
-  module.exports = app;
-}
-
-/* Start server
+// Start server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Task API running on port ${PORT}`);
 });
-/*
