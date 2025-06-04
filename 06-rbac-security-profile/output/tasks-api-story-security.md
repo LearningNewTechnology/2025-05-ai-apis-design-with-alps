@@ -85,13 +85,14 @@ This edition of the application needs to support the following operations. Each 
    * Type: Safe
    * AllowedRoles: user, admin
 
-## Rules
- * When executing **CreateNewTask**, the client should supply a unique `id` value.
-
 ## Roles
 These are the RBAC security roles for this API.
 
  * anon : Unauthenticated visitor (read-only, limited views)
  * user : Authenticated end-user with basic task interaction privileges
  * admin : Elevated privileges for managing tasks and assignments
+
+## Rules
+ * When executing **CreateNewTask**, the client should supply a unique `id` value.
+
 
